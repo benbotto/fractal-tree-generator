@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <script src="TreeApp.js"></script>
+    <script src="TreeCtrl.js"></script>
+    <script src="colorHelper.js"></script>
+    <script src="matrixHelper.js"></script>
+    <script src="Tree.js"></script>
+    <script src="busyTreeRenderer.js"></script>
+  </head>
+
+  <body ng-app="TreeApp" ng-controller="TreeCtrl">
+    <div>
+      <label>
+        Color:
+        <input type="text" ng-model="treeDetails.color" ng-model-options="{getterSetter: true}">
+      </label>
+      <br>
+      
+      <label>Max Depth:
+        <input type="text" ng-model="treeDetails.maxDepth" ng-model-options="{getterSetter: true}">
+      </label>
+      <br>
+      
+      <label>Cut down trees?
+        <input type="checkbox" ng-model="treeDetails.sawyer">
+      </label>
+      <br>
+      
+      <label>Random branch angles?
+        <input type="checkbox" ng-model="treeDetails.randomBranchAngles" ng-model-options="{getterSetter: true}">
+      </label>
+    </div>
+    <busy-tree-renderer tree="tree" sawyer="treeDetails.sawyer"></busy-tree-renderer>
+  </body>
+</html>
